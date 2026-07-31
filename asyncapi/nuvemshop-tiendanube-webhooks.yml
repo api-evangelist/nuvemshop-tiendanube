@@ -1,0 +1,66 @@
+generated: '2026-07-20'
+method: searched
+source: https://tiendanube.github.io/api-documentation/resources/webhook
+type: Webhooks
+delivery:
+  transport: http-post
+  registration: Webhook resource (POST /webhooks) with event + url
+  signature:
+    header: x-linkedstore-hmac-sha256
+    algorithm: HMAC-SHA256
+    secret: app client secret
+events:
+  app:
+  - app/uninstalled
+  - app/suspended
+  - app/resumed
+  category:
+  - category/created
+  - category/updated
+  - category/deleted
+  customer:
+  - customer/created
+  - customer/updated
+  - customer/deleted
+  order:
+  - order/created
+  - order/updated
+  - order/paid
+  - order/packed
+  - order/fulfilled
+  - order/cancelled
+  - order/custom_fields_updated
+  - order/edited
+  - order/pending
+  - order/voided
+  product:
+  - product/created
+  - product/updated
+  - product/deleted
+  product_variant:
+  - product_variant/custom_fields_updated
+  domain:
+  - domain/updated
+  custom_field:
+  - order_custom_field/created
+  - order_custom_field/updated
+  - order_custom_field/deleted
+  - product_variant_custom_field/created
+  - product_variant_custom_field/updated
+  - product_variant_custom_field/deleted
+  subscription:
+  - subscription/updated
+  fulfillment:
+  - fulfillment/updated
+  - fulfillment_order/status_updated
+  - fulfillment_order/tracking_event_created
+  - fulfillment_order/tracking_event_updated
+  - fulfillment_order/tracking_event_deleted
+  location:
+  - location/created
+  - location/updated
+  - location/deleted
+  data_protection:
+  - store/redact
+  - customers/redact
+  - customers/data_request

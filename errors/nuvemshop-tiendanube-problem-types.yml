@@ -1,0 +1,49 @@
+generated: '2026-07-20'
+method: searched
+source: https://tiendanube.github.io/api-documentation/intro
+format: custom-json
+envelope:
+  shape: '{ "code": <int>, "message": <string>, "description": <string> }'
+  content_type: application/json
+  example_401: '{ "code": 401, "message": "Unauthorized", "description": "Required access token is missing" }'
+  note: >-
+    Observed live at https://api.tiendanube.com/v1/ (HTTP 401). The API returns a
+    custom JSON error envelope rather than RFC 9457 application/problem+json.
+problems:
+- status: 400
+  title: Bad Request
+  meaning: Malformed request or invalid parameters/body.
+- status: 401
+  title: Unauthorized
+  meaning: Required access token is missing or invalid.
+- status: 402
+  title: Payment Required
+  meaning: Store or app is not in a state that permits the operation (e.g. plan/billing).
+- status: 403
+  title: Forbidden
+  meaning: The token lacks the OAuth scope required for the resource.
+- status: 404
+  title: Not Found
+  meaning: The requested resource does not exist.
+- status: 405
+  title: Method Not Allowed
+  meaning: HTTP verb not supported for the endpoint.
+- status: 406
+  title: Not Acceptable
+  meaning: Requested representation not available.
+- status: 415
+  title: Unsupported Media Type
+  meaning: Content-Type not application/json.
+- status: 422
+  title: Unprocessable Entity
+  meaning: Validation failed on an otherwise well-formed request.
+- status: 429
+  title: Too Many Requests
+  meaning: Leaky-bucket rate limit exceeded; see x-rate-limit-* headers.
+- status: 500
+  title: Internal Server Error
+  meaning: Unexpected server error.
+- status: 502
+  title: Bad Gateway
+- status: 503
+  title: Service Unavailable

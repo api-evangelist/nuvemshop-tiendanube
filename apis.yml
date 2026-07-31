@@ -1,8 +1,31 @@
 aid: nuvemshop-tiendanube
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nuvemshop-tiendanube.png
 name: Nuvemshop Tiendanube
-description: Nuvemshop Tiendanube is a company surfaced as a portfolio company of insight-partners and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Nuvemshop (Tiendanube in Spanish-speaking markets) is the leading e-commerce
+  platform in Latin America, powering online stores for merchants across Brazil,
+  Argentina, Mexico, Chile, Colombia and beyond. Its REST API lets partners and
+  developers build public apps and integrations that manage products, variants,
+  images, categories, orders, draft orders, abandoned checkouts, customers,
+  coupons, discounts, transactions, payment providers, shipping carriers,
+  locations, metafields, scripts and store data. Apps authenticate with a
+  restricted OAuth 2 authorization-code flow (non-expiring bearer tokens),
+  respect a leaky-bucket rate limit, and subscribe to a rich catalog of webhooks
+  (order, product, customer, category, fulfillment, subscription and data-protection
+  events) verified with HMAC-SHA256. The platform also ships an official CLI,
+  the nube-sdk JavaScript packages, and the Nimbus design system.
 url: https://raw.githubusercontent.com/api-evangelist/nuvemshop-tiendanube/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,15 +35,104 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1
 tags:
 - Company
-apis: []
+- E-Commerce
+- Retail
+- Online Stores
+- Payments
+- Shipping
+- Webhooks
+- OAuth
+- Latin America
+- Storefront
+- Apps Platform
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Nuvemshop Tiendanube API
+  description: >-
+    REST API for building public apps and integrations on the Nuvemshop /
+    Tiendanube e-commerce platform: products, orders, customers, categories,
+    coupons, discounts, transactions, shipping, locations, metafields, scripts,
+    webhooks and store resources. OAuth 2 authorization-code auth with bearer
+    tokens; JSON over HTTPS; date-based API versioning (current 2025-03, legacy v1).
+  humanURL: https://tiendanube.github.io/api-documentation/intro
+  baseURL: https://api.tiendanube.com/2025-03/
+  tags:
+  - E-Commerce
+  - Products
+  - Orders
+  - Customers
+  - Webhooks
+  properties:
+  - type: Authentication
+    url: authentication/nuvemshop-tiendanube-authentication.yml
+  - type: OAuthScopes
+    url: scopes/nuvemshop-tiendanube-scopes.yml
+  - type: Webhooks
+    url: asyncapi/nuvemshop-tiendanube-webhooks.yml
+  - type: AsyncAPI
+    url: asyncapi/nuvemshop-tiendanube-events-asyncapi.yml
+  - type: ErrorCatalog
+    url: errors/nuvemshop-tiendanube-problem-types.yml
+  - type: Conventions
+    url: conventions/nuvemshop-tiendanube-conventions.yml
+  - type: DataModel
+    url: data-model/nuvemshop-tiendanube-data-model.yml
+  - type: Conformance
+    url: conformance/nuvemshop-tiendanube-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/nuvemshop-tiendanube-lifecycle.yml
+  - type: MCPServer
+    url: mcp/nuvemshop-tiendanube-mcp.yml
 common:
 - type: Website
   url: https://www.nuvemshop.com.br/
+- type: DeveloperPortal
+  url: https://dev.tiendanube.com/
+- type: Documentation
+  url: https://tiendanube.github.io/api-documentation/
+- type: APIReference
+  url: https://tiendanube.github.io/api-documentation/intro
+- type: GettingStarted
+  url: https://dev.tiendanube.com/docs/getting-started
+- type: GitHubOrganization
+  url: https://github.com/TiendaNube
+- type: Support
+  url: https://atendimento.nuvemshop.com.br/
+- type: Blog
+  url: https://www.nuvemshop.com.br/blog
+- type: TermsOfService
+  url: https://www.nuvemshop.com.br/termos-de-uso
+- type: StatusPage
+  url: https://status.nuvemshop.com.br/
+- type: SDKs
+  url: packages/nuvemshop-tiendanube-packages.yml
+- type: Packages
+  url: packages/nuvemshop-tiendanube-packages.yml
+- type: CLI
+  url: cli/nuvemshop-tiendanube-cli.yml
+- type: Components
+  url: components/nuvemshop-tiendanube-components.yml
+- type: SecurityTxt
+  url: well-known/nuvemshop-tiendanube-security.txt
+- type: WellKnown
+  url: well-known/nuvemshop-tiendanube-well-known.yml
+- type: VulnerabilityDisclosure
+  url: security/nuvemshop-tiendanube-vulnerability-disclosure.yml
+- type: Security
+  url: security/nuvemshop-tiendanube-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/nuvemshop-tiendanube-domain-security.yml
+- type: LLMsTxt
+  url: llms/nuvemshop-tiendanube-llms.txt

@@ -1,0 +1,53 @@
+generated: '2026-07-20'
+method: searched
+source: https://tiendanube.github.io/api-documentation/intro
+docs: https://tiendanube.github.io/api-documentation/intro
+authentication:
+  style: oauth2-bearer
+  header: 'Authorization: bearer <access_token>'
+  user_agent_required: true
+  detail: authentication/nuvemshop-tiendanube-authentication.yml
+idempotency:
+  supported: false
+  note: No idempotency-key header or parameter is documented for write operations.
+pagination:
+  style: page-number
+  params:
+    page: 1-based page number, default 1
+    per_page: items per page, max 200
+  response_headers:
+  - x-total-count
+  - Link (rel=next, prev, first, last)
+field_selection:
+  fields_param: fields
+  note: Many list/detail endpoints accept a `fields` query parameter to select a subset of attributes.
+metadata:
+  metafields: Custom key/value metafields are exposed as a first-class Metafield resource.
+request_tracing:
+  note: No documented request-id correlation header.
+versioning:
+  scheme: date-based (train)
+  current: '2025-03'
+  path_position: 'first path segment, e.g. /2025-03/{store_id}/...'
+  legacy: v1
+  channels: [stable date versions, Unstable]
+  detail: lifecycle/nuvemshop-tiendanube-lifecycle.yml
+error_envelope:
+  shape: '{ "code": <int>, "message": <string>, "description": <string> }'
+  content_type: application/json
+  note: Custom JSON error envelope (not RFC 9457 application/problem+json).
+  detail: errors/nuvemshop-tiendanube-problem-types.yml
+rate_limiting:
+  algorithm: leaky-bucket
+  bucket_size: 40
+  leak_rate_per_second: 2
+  higher_plan_multiplier: 10 (Next / Evolution plans)
+  headers:
+  - x-rate-limit-limit
+  - x-rate-limit-remaining
+  - x-rate-limit-reset
+  exceeded_status: 429
+content_types:
+  request: application/json; charset=utf-8
+  response: application/json
+verbs: [HEAD, GET, POST, PUT, DELETE]

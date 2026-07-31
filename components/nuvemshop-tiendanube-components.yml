@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/TiendaNube + https://nimbus.tiendanube.com
+families:
+- family: Nimbus Design System
+  description: >-
+    Official design system created by the Nuvemshop/Tiendanube team to build
+    admin/app interfaces with consistency, accessibility and performance.
+  type: react-component-library
+  loaders:
+  - "@nimbus-ds/components"
+  - "@nimbus-ds/styles"
+  - "@nimbus-ds/tokens"
+  repos:
+  - https://github.com/TiendaNube/nimbus-design-system
+  - https://github.com/TiendaNube/nimbus-patterns
+- family: nube-sdk UI
+  description: >-
+    App storefront UI toolkit for building partner apps that render components
+    inside the Nuvemshop/Tiendanube storefront and checkout surfaces.
+  type: app-ui-sdk
+  loaders:
+  - "@tiendanube/nube-sdk-ui"
+  - "@tiendanube/nube-sdk-jsx"
+  - "@tiendanube/nube-sdk-types"
+  repos:
+  - https://github.com/TiendaNube/nube-sdk

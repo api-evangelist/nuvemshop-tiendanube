@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+hosts:
+- host: https://api.tiendanube.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: nuvemshop-tiendanube-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+- host: https://www.tiendanube.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: identical RFC 9116 file served at both api and www hosts
+notes: >-
+  A valid RFC 9116 security.txt is published (saved verbatim). No OpenID Connect
+  or OAuth authorization-server discovery documents are exposed — the platform uses
+  a restricted OAuth 2 authorization-code flow with fixed app authorize/token URLs.

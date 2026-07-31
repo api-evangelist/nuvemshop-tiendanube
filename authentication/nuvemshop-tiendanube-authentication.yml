@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://tiendanube.github.io/api-documentation/authentication
+docs: https://tiendanube.github.io/api-documentation/authentication
+summary:
+  types: [oauth2]
+  api_key_in: []
+  oauth2_flows: [authorizationCode]
+  token_transport: bearer
+  token_expiry: none
+schemes:
+- name: OAuth2
+  type: oauth2
+  description: >-
+    Restricted form of OAuth 2 supporting only the authorization_code grant.
+    Access tokens are bearer tokens that do not expire, but are invalidated when
+    a new token is issued or the app is uninstalled.
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.tiendanube.com/apps/{app_id}/authorize
+    tokenUrl: https://www.tiendanube.com/apps/authorize/token
+    alt_domain: nuvemshop.com.br
+    notes: >-
+      Authorization code expires after 5 minutes. Token request POSTs a JSON body
+      with client_id, client_secret, grant_type=authorization_code and code.
+      Token response returns access_token, token_type=bearer, scope and user_id
+      (the store id).
+request_auth:
+  header: 'Authorization: bearer <access_token>'
+  user_agent_required: true
+  user_agent_format: 'AppName (email@example.com) or AppName (https://website.com)'

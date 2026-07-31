@@ -1,0 +1,29 @@
+# Nuvemshop Tiendanube
+
+> Nuvemshop (Tiendanube in Spanish-speaking markets) is the leading e-commerce platform in Latin America. Its REST API lets partners build public apps and integrations that manage products, orders, customers, categories, coupons, shipping, locations, metafields, scripts and webhooks. Apps use a restricted OAuth 2 authorization-code flow with non-expiring bearer tokens, a leaky-bucket rate limit, and HMAC-SHA256-signed webhooks.
+
+## APIs
+
+- [Nuvemshop Tiendanube API](https://tiendanube.github.io/api-documentation/intro): REST API, base URL https://api.tiendanube.com/2025-03/{store_id} (also api.nuvemshop.com.br). Date-based versioning (current 2025-03, legacy v1).
+
+## Docs
+
+- [Developer Portal (DevHub)](https://dev.tiendanube.com/)
+- [API Documentation](https://tiendanube.github.io/api-documentation/)
+- [Authentication (OAuth 2)](https://tiendanube.github.io/api-documentation/authentication)
+- [Webhooks](https://tiendanube.github.io/api-documentation/resources/webhook)
+- [Getting Started](https://dev.tiendanube.com/docs/getting-started)
+
+## Tooling
+
+- [Official CLI](https://github.com/TiendaNube/cli): @tiendanube/cli (theme development and store automation)
+- [nube-sdk](https://github.com/TiendaNube/nube-sdk): JavaScript app-development packages
+- [Nimbus Design System](https://github.com/TiendaNube/nimbus-design-system): @nimbus-ds/* React component library
+- [GitHub Organization](https://github.com/TiendaNube)
+
+## Operations
+
+- [Status Page](https://status.nuvemshop.com.br/)
+- [Security (security.txt)](https://api.tiendanube.com/.well-known/security.txt): security.report@tiendanube.com
+- [Support](https://atendimento.nuvemshop.com.br/)
+- [Terms of Service](https://www.nuvemshop.com.br/termos-de-uso)

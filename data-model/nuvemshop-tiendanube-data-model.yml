@@ -1,0 +1,92 @@
+generated: '2026-07-20'
+method: derived
+source: https://tiendanube.github.io/api-documentation/ (resource reference)
+note: >-
+  Entity graph derived from the documented API resource set and their reference
+  relationships. No OpenAPI spec is published, so relationships are drawn from
+  the resource reference rather than $ref links.
+entities:
+- name: Store
+  description: The merchant store (root resource, addressed by store_id in the URL).
+- name: Product
+  description: Catalog product.
+- name: ProductVariant
+  description: Purchasable variant of a product (SKU/price/stock).
+- name: ProductImage
+  description: Image attached to a product.
+- name: Category
+  description: Product category (supports hierarchy).
+- name: Customer
+  description: Store customer.
+- name: Order
+  description: Placed order.
+- name: DraftOrder
+  description: Draft/quote order not yet placed.
+- name: AbandonedCheckout
+  description: Checkout started but not completed.
+- name: Transaction
+  description: Payment transaction on an order.
+- name: PaymentProvider
+  description: Configured payment provider.
+- name: Coupon
+  description: Discount coupon.
+- name: Discount
+  description: Order/line discount.
+- name: ShippingCarrier
+  description: Configured shipping carrier.
+- name: Location
+  description: Inventory/fulfillment location.
+- name: Metafield
+  description: Custom key/value metadata attached to resources.
+- name: Script
+  description: Storefront script injected by an app.
+- name: Webhook
+  description: Registered webhook subscription.
+relationships:
+- from: Store
+  type: has_many
+  to: Product
+- from: Product
+  type: has_many
+  to: ProductVariant
+  via: product_id
+- from: Product
+  type: has_many
+  to: ProductImage
+  via: product_id
+- from: Product
+  type: belongs_to
+  to: Category
+  via: categories
+- from: Category
+  type: has_one
+  to: Category
+  via: parent
+- from: Order
+  type: belongs_to
+  to: Customer
+  via: customer
+- from: Order
+  type: has_many
+  to: Transaction
+  via: order_id
+- from: Order
+  type: has_many
+  to: Product
+  via: products (line items)
+- from: DraftOrder
+  type: belongs_to
+  to: Customer
+  via: customer
+- from: Transaction
+  type: belongs_to
+  to: PaymentProvider
+  via: payment_provider_id
+- from: Metafield
+  type: belongs_to
+  to: Product
+  via: owner_resource/owner_id
+- from: Webhook
+  type: belongs_to
+  to: Store
+  via: store_id

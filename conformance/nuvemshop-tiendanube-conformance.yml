@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: derived
+source: https://tiendanube.github.io/api-documentation/
+standards:
+- id: oauth2
+  conforms: true
+  evidence: Restricted OAuth 2 authorization_code flow with bearer tokens (documented).
+- id: oidc
+  conforms: false
+  evidence: No OpenID Connect discovery or id_token; no /.well-known/openid-configuration (404).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom JSON envelope { code, message, description }, not application/problem+json.
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: Valid security.txt published at /.well-known/security.txt.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No documented Sunset/Deprecation header policy.
+- id: pagination
+  conforms: true
+  evidence: page/per_page params with x-total-count and RFC 5988 Link header (rel next/prev/first/last).
+- id: rate-limiting
+  conforms: true
+  evidence: Leaky-bucket limits with x-rate-limit-* headers and 429 responses.
+- id: webhooks-hmac
+  conforms: true
+  evidence: Webhook payloads signed with HMAC-SHA256 in x-linkedstore-hmac-sha256 header.
+- id: json-api
+  conforms: false
+  evidence: Plain JSON resources, not JSON:API media type.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented.

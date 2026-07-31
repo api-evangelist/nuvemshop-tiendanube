@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/TiendaNube/cli
+official: true
+name: Nuvemshop / Tiendanube CLI
+package: "@tiendanube/cli"
+binaries: [nuvemshop, tiendanube]
+install:
+- npm install -g @tiendanube/cli
+purpose: >-
+  Official CLI for theme development and storefront automation against
+  Nuvemshop/Tiendanube stores. Supports both FTP-based theme editing and the
+  modern fork/public-API theme workflow.
+command_groups:
+- group: theme (public API / fork mode)
+  commands:
+  - theme authorize   # sign in via browser
+  - theme list        # list available themes
+  - theme create      # scaffold a new theme
+  - theme pull        # download theme files
+  - theme push        # upload local changes
+  - theme watch       # sync on file change
+  - theme preview     # share a preview URL
+  - theme publish     # make a theme live
+  - theme clone
+  - theme fork
+  - theme delete
+- group: theme ftp (legacy FTP mode)
+  commands:
+  - theme ftp setup   # configure FTP credentials
+  - theme ftp pull    # download theme files
+  - theme ftp push    # upload local files
+  - theme ftp watch   # sync and live-reload storefront

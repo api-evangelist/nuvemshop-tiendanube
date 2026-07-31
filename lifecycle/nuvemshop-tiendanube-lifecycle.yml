@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: https://tiendanube.github.io/api-documentation/intro
+versioning:
+  scheme: date-based-train
+  current: '2025-03'
+  legacy: v1
+  channels: [dated stable versions, Unstable]
+  path_position: 'first path segment: /{version}/{store_id}/...'
+  note: >-
+    Multiple API versions are supported simultaneously. Clients pin a dated
+    version (e.g. 2025-03) in the URL; the legacy v1 path remains available and
+    an "Unstable" channel exposes upcoming changes.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No formal RFC 8594 Sunset/Deprecation header policy is documented. Version
+    lifecycle is managed via the dated-version scheme (older dated versions are
+    retired over time).
+status_page: https://status.nuvemshop.com.br/
+status_pages:
+- https://status.nuvemshop.com.br/
+- https://status.tiendanube.com/
+sla:
+  url: null
+tokens:
+  expiry: none
+  note: OAuth access tokens do not expire; they are invalidated on re-issue or app uninstall.

@@ -1,0 +1,82 @@
+# generated: '2026-07-20'
+# method: generated
+# source: https://tiendanube.github.io/api-documentation/resources/webhook
+# note: Faithful AsyncAPI generated from the provider's documented webhook event
+#       catalog. Nuvemshop/Tiendanube does not publish an AsyncAPI document; this
+#       captures the real event names and HMAC-SHA256 signature binding.
+asyncapi: 2.6.0
+info:
+  title: Nuvemshop Tiendanube Webhook Events
+  version: '2025-03'
+  description: >-
+    Webhook event surface for the Nuvemshop/Tiendanube platform. Apps register a
+    Webhook resource (event + url) and receive HTTP POST callbacks signed with
+    HMAC-SHA256 in the x-linkedstore-hmac-sha256 header.
+defaultContentType: application/json
+servers:
+  merchant-endpoint:
+    url: '{app_webhook_url}'
+    protocol: https
+    description: The HTTPS endpoint the app registers to receive webhook POSTs.
+    variables:
+      app_webhook_url:
+        default: https://example.com/webhooks
+components:
+  messageTraits:
+    signed:
+      headers:
+        type: object
+        properties:
+          x-linkedstore-hmac-sha256:
+            type: string
+            description: HMAC-SHA256 signature of the raw body using the app client secret.
+  messages:
+    storeEvent:
+      contentType: application/json
+      traits:
+      - $ref: '#/components/messageTraits/signed'
+      payload:
+        type: object
+        properties:
+          store_id:
+            type: integer
+          event:
+            type: string
+          id:
+            type: integer
+            description: Identifier of the affected resource (when applicable).
+channels:
+  app/uninstalled: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  app/suspended: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  app/resumed: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  category/created: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  category/updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  category/deleted: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  customer/created: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  customer/updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  customer/deleted: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/created: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/paid: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/packed: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/fulfilled: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/cancelled: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/custom_fields_updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/edited: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/pending: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  order/voided: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  product/created: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  product/updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  product/deleted: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  product_variant/custom_fields_updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  domain/updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  subscription/updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  fulfillment/updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  fulfillment_order/status_updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  fulfillment_order/tracking_event_created: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  location/created: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  location/updated: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  location/deleted: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  store/redact: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  customers/redact: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }
+  customers/data_request: { subscribe: { message: { $ref: '#/components/messages/storeEvent' } } }

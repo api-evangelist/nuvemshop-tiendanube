@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/TiendaNube + https://registry.npmjs.org
+packages:
+- language: javascript
+  registry: npm
+  name: "@tiendanube/nube-sdk-ui"
+  url: https://www.npmjs.com/package/@tiendanube/nube-sdk-ui
+  install: npm install @tiendanube/nube-sdk-ui
+  official: true
+  description: UI package of the nube-sdk for building Nuvemshop/Tiendanube app storefront components.
+- language: javascript
+  registry: npm
+  name: "@tiendanube/nube-sdk-types"
+  url: https://www.npmjs.com/package/@tiendanube/nube-sdk-types
+  install: npm install @tiendanube/nube-sdk-types
+  official: true
+  description: TypeScript type definitions for the nube-sdk app development toolkit.
+- language: javascript
+  registry: npm
+  name: "@tiendanube/nube-sdk-jsx"
+  url: https://www.npmjs.com/package/@tiendanube/nube-sdk-jsx
+  install: npm install @tiendanube/nube-sdk-jsx
+  official: true
+  description: JSX runtime for authoring nube-sdk app UI.
+- language: javascript
+  registry: npm
+  name: "@tiendanube/cli"
+  url: https://www.npmjs.com/package/@tiendanube/cli
+  install: npm install -g @tiendanube/cli
+  official: true
+  description: Official Nuvemshop/Tiendanube CLI (nuvemshop / tiendanube binaries) for theme development and store automation.
+- language: javascript
+  registry: npm
+  name: "@nimbus-ds/components"
+  url: https://www.npmjs.com/package/@nimbus-ds/components
+  install: npm install @nimbus-ds/components
+  official: true
+  description: React component library of the Nimbus Design System created by Nuvemshop/Tiendanube.
+- language: javascript
+  registry: npm
+  name: "@nimbus-ds/styles"
+  url: https://www.npmjs.com/package/@nimbus-ds/styles
+  install: npm install @nimbus-ds/styles
+  official: true
+  description: Design tokens and styles for the Nimbus Design System.
+notes: >-
+  Nuvemshop/Tiendanube does not publish an official server-side REST client SDK
+  (no first-party PHP/Python/Ruby package on their org); the JavaScript nube-sdk
+  packages target app UI development, and community REST wrappers exist but are
+  not first-party. The CLI binary is catalogued here and detailed in cli/.

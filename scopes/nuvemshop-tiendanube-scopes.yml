@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://tiendanube.github.io/api-documentation/authentication
+docs: https://tiendanube.github.io/api-documentation/authentication
+schemes:
+- name: OAuth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.tiendanube.com/apps/{app_id}/authorize
+    tokenUrl: https://www.tiendanube.com/apps/authorize/token
+notes: >-
+  Requesting any write scope implies the matching read scope. Scopes are granted
+  by the merchant at app authorization time and returned in the token response.
+scopes:
+- scope: read_content
+  description: Read access to store content pages.
+- scope: write_content
+  description: Write access to store content pages (implies read_content).
+- scope: read_products
+  description: Read access to products, variants, images and categories.
+- scope: write_products
+  description: Write access to products, variants, images and categories (implies read_products).
+- scope: read_customers
+  description: Read access to customers.
+- scope: write_customers
+  description: Write access to customers (implies read_customers).
+- scope: read_orders
+  description: Read access to orders.
+- scope: write_orders
+  description: Write access to orders (implies read_orders).
+- scope: read_coupons
+  description: Read access to coupons.
+- scope: write_coupons
+  description: Write access to coupons (implies read_coupons).
+- scope: write_scripts
+  description: Manage storefront scripts (no separate read scope).
+- scope: write_shipping
+  description: Manage shipping carriers (no separate read scope).
