@@ -5,7 +5,7 @@
       "source": "https://nuvemshop.helpjuice.com/questions.atom",
       "feed_url": "https://nuvemshop.helpjuice.com/questions.atom",
       "title": "",
-      "saved": 0,
+      "saved": 35,
       "method": "feed"
     },
     {
@@ -16,6 +16,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 91,
-  "fetched": "2026-08-06T14:08:46Z"
+  "post_count": 126,
+  "fetched": "2026-08-15T12:11:08Z"
 }
