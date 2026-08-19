@@ -2,10 +2,8 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: https://tiendanube.github.io/api-documentation/ (resource reference)
-note: >-
-  No official hosted/remote MCP server was found for Nuvemshop/Tiendanube. This is
-  a candidate tool surface derived from the documented REST resources so an MCP
-  server could be forged over the API.
+note: No official hosted/remote MCP server was found for Nuvemshop/Tiendanube. This is a candidate tool
+  surface derived from the documented REST resources so an MCP server could be forged over the API.
 server:
   name: nuvemshop-tiendanube
   transport: http
@@ -16,31 +14,37 @@ auth:
 tools:
 - name: list_products
   description: List products in a store.
-  source_operation: 'GET /{store_id}/products'
+  source_operation: GET /{store_id}/products
 - name: get_product
   description: Retrieve a product.
-  source_operation: 'GET /{store_id}/products/{id}'
+  source_operation: GET /{store_id}/products/{id}
 - name: create_product
   description: Create a product.
-  source_operation: 'POST /{store_id}/products'
+  source_operation: POST /{store_id}/products
 - name: update_product
   description: Update a product.
-  source_operation: 'PUT /{store_id}/products/{id}'
+  source_operation: PUT /{store_id}/products/{id}
 - name: list_orders
   description: List orders.
-  source_operation: 'GET /{store_id}/orders'
+  source_operation: GET /{store_id}/orders
 - name: get_order
   description: Retrieve an order.
-  source_operation: 'GET /{store_id}/orders/{id}'
+  source_operation: GET /{store_id}/orders/{id}
 - name: list_customers
   description: List customers.
-  source_operation: 'GET /{store_id}/customers'
+  source_operation: GET /{store_id}/customers
 - name: list_categories
   description: List categories.
-  source_operation: 'GET /{store_id}/categories'
+  source_operation: GET /{store_id}/categories
 - name: list_coupons
   description: List coupons.
-  source_operation: 'GET /{store_id}/coupons'
+  source_operation: GET /{store_id}/coupons
 - name: create_webhook
   description: Register a webhook subscription.
-  source_operation: 'POST /{store_id}/webhooks'
+  source_operation: POST /{store_id}/webhooks
+deployment:
+  mode: none
+  verified: derived
+  tools: 10
+  checked: '2026-08-12'
+  source: catalog MCP census
