@@ -122,8 +122,9 @@ apis:
     url: conformance/nuvemshop-tiendanube-conformance.yml
   - type: Lifecycle
     url: lifecycle/nuvemshop-tiendanube-lifecycle.yml
-  - type: MCPServer
+  - type: X-MCPServerCandidate
     url: mcp/nuvemshop-tiendanube-mcp.yml
+    note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 common:
 - type: Website
   url: https://www.nuvemshop.com.br/
